@@ -72,6 +72,13 @@ class Ledger extends Component {
               </p>
               <table className="table table-hover">
                 <tbody>
+                  <tr className={"text-white table-"}>
+                    <th scope="row"><i class="p-2 fas fa-user" /></th>
+
+                    <th className="align-middle">User Name</th>
+                    <th className="align-middle" >Amount</th>
+                  </tr>
+
                   {this.state.owed.map(user => {
                     // totalOwed += user.amount
 
@@ -93,6 +100,12 @@ class Ledger extends Component {
               </p>
               <table className="table table-hover">
                 <tbody>
+                <tr className={"text-white table-"}>
+                    <th scope="row"><i class="p-2 fas fa-user" /></th>
+
+                    <th className="align-middle">User Name</th>
+                    <th className="align-middle" >Amount</th>
+                  </tr>
                   {this.state.paid.map(user => {
                     // totalPaid += user.amount
 

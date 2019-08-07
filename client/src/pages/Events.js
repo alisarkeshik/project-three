@@ -26,15 +26,30 @@ class Events extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h4>Events: </h4>
-
-                <div className="card bg-primary mb-5">
-
-                    {this.state.events.map((event) => {
-
-                        return (<EventCard username={event.userId} eventname={event.eventName} amount={event.amount} color="primary" participants={event.usersAttended} />)
-                    })}
+            <div className="row">
+                <div className="col-md-8 mx-auto">
+                    <h4>Events: </h4><br />
+                    <div className="card bg-primary">
+                        <table className="table table-hover">
+                            <tbody>
+                                <tr className={"text-white table-"}>
+                                    <th scope="row">
+                                        Participants
+                                    </th>
+                                    <th className="align-middle">
+                                        Your Name
+                                        </th>
+                                    <th className="align-middle">Event Name</th>
+                                    <th className="align-middle">Amount</th>
+                                </tr>
+                                {this.state.events.map((event) => {
+                                    return (<EventCard
+                                        username={event.userId}
+                                        eventname={event.eventName} amount={event.amount} color="primary" participants={event.usersAttended} />)
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         )
