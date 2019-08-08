@@ -60,7 +60,7 @@ class Ledger extends Component {
   }
 
   handleClick = (id, payee, eventName, username, amount) => {
-    console.log("click handling! ", id, payee, eventName, username)
+    console.log("click handling! ", id, payee, eventName, username);
 
     const eventToUpdate = {
       userId: username,
@@ -68,38 +68,27 @@ class Ledger extends Component {
       amount: amount,
       eventName: eventName,
       eventId: id
-    }
+    };
 
-    console.log(eventToUpdate)
-    axios.post("/user/pay", eventToUpdate)
+    console.log(eventToUpdate);
+    axios
+      .post("/user/pay", eventToUpdate)
       .then(response => {
-        console.log("there goes payment!")
+        console.log("there goes payment!");
         this.notify(eventName + "has been paid.");
-        this.props.history.push('/')
+        this.props.history.push("/");
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
+  };
 
-  }
-
-  notify = (message) => {
+  notify = message => {
     toast(message);
-  }
+  };
 
   render() {
     return (
       <div>
-        <div className="row">
-          <div className="col-md-11 mx-auto">
-            {this.setTotals()}
-
-            <TotalBalanceCard
-              userOwes={totalOwed.toFixed(2)}
-              userIsOwed={totalPaid.toFixed(2)}
-              balance={(totalPaid - totalOwed).toFixed(2)}
-            />
-            {console.log(totalOwed)}
-          </div>
-        </div>
+        <h4 className="text-center mb-3">{this.props.username}'s Ledger:</h4>
         {console.log(this.state)}
 
         <div className="row">
@@ -168,6 +157,18 @@ class Ledger extends Component {
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-11 mx-auto">
+            {this.setTotals()}
+
+            <TotalBalanceCard
+              userOwes={totalOwed.toFixed(2)}
+              userIsOwed={totalPaid.toFixed(2)}
+              balance={(totalPaid - totalOwed).toFixed(2)}
+            />
+            {console.log(totalOwed)}
           </div>
         </div>
       </div>
