@@ -24,6 +24,18 @@ Table.propTypes = {
     ])
 };
 
+const styles = {
+    eventsHeader: {
+      backgroundColor: "navy",
+      fontSize: "20px",
+      margin: "2px",
+      width: "750px",
+    },
+    tableData: {
+      width: "756px"
+    }
+  };
+
 class Events extends Component {
     state = {
         events: []
@@ -51,9 +63,16 @@ class Events extends Component {
             <div className="col-md-8 mx-auto align-middle">
                 <h4>Your Events: </h4>
                 <br />
-                <Table className="table table-hover text-white lead align-middle card bg-primary">
-                    <thead className="table-light text-center">
-                        <tr>
+                <table className="table table-hover text-white lead align-middle card bg-primary"
+               style={
+                styles.tableData
+                }>
+               
+                    <thead className="text-center"
+                     style={
+                         styles.eventsHeader
+                         }>
+                        <tr className="text-white" >
                             <th scope="col">
                                 Participants
                             </th>
@@ -73,7 +92,7 @@ class Events extends Component {
                                 participants={event.usersAttended} />)
                         })}
                     </tbody>
-                </Table>
+                </table>
             </div>
         )
     }

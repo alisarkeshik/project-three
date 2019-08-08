@@ -1,6 +1,10 @@
-th, td, tr {
+th, td {
     padding: 30px;
-    width: 250px;
+    width: 225px;
+}
+
+#red:nth-child(even) {
+    background-color: red;
 }
 
 /* ol {

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Table } from 'reactstrap';
+import "../../../client/src/events.css"
 
 let participants = []
 
