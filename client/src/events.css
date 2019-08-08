@@ -3,10 +3,3 @@ th, td {
     width: 225px;
 }
 
-#red:nth-child(even) {
-    background-color: red;
-}
-
-/* ol {
-    text-align: center;
-} */
