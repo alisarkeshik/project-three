@@ -49,7 +49,7 @@ class Events extends Component {
     render() {
         return (
             <div className="col-md-8 mx-auto align-middle">
-                <h4>Events: </h4>
+                <h4>Your Events: </h4>
                 <br />
                 <Table className="table table-hover text-white lead align-middle card bg-primary">
                     <thead className="table-light text-center">
