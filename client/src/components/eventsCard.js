@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
+import { Table } from 'reactstrap';
 
 let participants = []
+
 function eventCard(props) {
     return (
         <div className="container">
-            <table className={"table table-hover" + props.color}>
+            <Table className={"table table-hover" + props.color}>
                 <tbody>
                     <tr className={"text-white table-"}>
                         <th scope="row">
@@ -16,18 +18,18 @@ function eventCard(props) {
                                 })}
                             </ol>
                         </th>
-                        <td className="align-middle">
+                        {/* <td className="text-center">
                             <p className="lead">{props.username}</p>
+                        </td> */}
+                        <td>
+                        <p className="lead">{props.eventname}</p>
                         </td>
-                        <td className="align-middle">
-                            <p className="lead">{props.eventname}</p>
-                        </td>
-                        <td className="align-middle">
-                            <p className="lead">${props.amount}</p>
+                        <td>
+                        <p className="lead">${props.amount}</p>
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </Table>
         </div>
     );
 }

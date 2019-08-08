@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Individualcard from "../components/individualCard";
 import TotalBalanceCard from "../components/totalBalance";
 import axios from "axios";
+import { Table } from 'reactstrap';
 
 var totalOwed = 0;
 var totalPaid = 0;
@@ -70,7 +71,7 @@ class Ledger extends Component {
               <p className="lead text-white pl-3 align-middle pt-3">
                 Events you owe money for:
               </p>
-              <table className="table table-hover">
+              <Table className="table table-hover">
                 <tbody>
                   <tr className={"text-white table-"}>
                     <th scope="row"><i class="p-2 fas fa-user" /></th>
@@ -91,7 +92,7 @@ class Ledger extends Component {
                     );
                   })}
                 </tbody>
-              </table>
+              </Table>
             </div>
 
             <div className="card bg-success mt-4 mb-4">
